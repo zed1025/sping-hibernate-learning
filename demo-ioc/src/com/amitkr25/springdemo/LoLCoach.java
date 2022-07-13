@@ -4,8 +4,8 @@ public class LoLCoach implements Coach {
 	
 	private FortuneService fortuneService;
 	
-	public LoLCoach(FortuneService fs) {
-		fortuneService = fs;
+	public LoLCoach(FortuneService theFortuneService) {
+		fortuneService = theFortuneService;
 	}
 
 	@Override
