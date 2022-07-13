@@ -1,0 +1,7 @@
+- download jars for spring from https://repo.spring.io/ui/repos/tree/General/libs-release/org/springframework/spring/5.3.9/spring-5.3.9-dist.zip
+- put the .jar files into the /lib directory
+- configure classpath to use the jars from /lib directory
+	- open project Properties
+	- Select Java Build Path
+	- Under Libraries, select Classpath and click Add
+	- select all the jars in the /lib directory
