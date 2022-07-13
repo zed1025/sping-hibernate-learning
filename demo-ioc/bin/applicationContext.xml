@@ -27,6 +27,17 @@
     	<property name="emailAddress" value="${foo.email}" />
     	<property name="team" value="${foo.team}" />
     </bean>
+    
+    
+    <!-- practice activity 2 -->
+    <bean id="myRandomFortune"
+    	class="com.amitkr25.springdemo.RandomFortuneService">
+    </bean>
+    <bean id="mySupportCoach"
+    	class="com.amitkr25.springdemo.SupportCoach">
+    	<!-- using setter injection -->
+    	<property name="fortuneService" ref="myRandomFortune"/>
+    </bean>
 </beans>
 
 
