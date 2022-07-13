@@ -1,0 +1,43 @@
+Unzip the Kafka file downloaded from https://kafka.apache.org/downloads
+Place it in a folder, I'll place it at D:\Files\Amit\dev\servers\
+Rename the folder from, kafka_2.13-3.2.0 to kafka2.13
+
+
+KAFKA_ROOT: D:\Files\Amit\dev\servers\kafka2.13
+
+
+
+Configure Zookeeper Logs folder:
+- Go to KAFKA_ROOT
+- Inside `config` folder open `zookeeper.properties`
+- Set the following for `dataDir`
+	`dataDir=D:\Files\Amit\dev\servers\kafka2.13\zookeeper-logs`
+- This is the folder where the logs for zookeeper will be stored
+
+
+Configuring server.properties
+- In KAFKA_ROOT/config open server.properties
+- Go to `Log Basics` section and change 
+	`log.dirs=dataDir=D:\Files\Amit\dev\servers\kafka2.13\kafka-logs`
+- This is where logs for kafka will be stored
+
+
+
+Running Kafka
+1. Run Zookeeper(make sure you are in the KAFKA_ROOT directory)
+	`.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties`
+2. Run Apache Kafka server
+	`.\bin\windows\kafka-server-start.bat .\config\server.properties`
+3. Creating a new Topic
+	`.\bin\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic topic1`
+4. List all topics
+	`.\bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092`
+5. Create/Run Producer
+	`.\bin\windows\kafka-console-producer.bat --broker-list localhost:9092 --topic topic1`
+6. Create/Run Consumer
+	`.\bin\windows\kafka-console-consumer.bat --topic topic1 --from-beginning --bootstrap-server localhost:9092`
+
+
+References:
+- https://www.youtube.com/watch?v=l1bgGE2xuO8
+	
