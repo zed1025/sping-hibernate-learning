@@ -9,11 +9,14 @@ public class HelloSpringApp {
 		// load the spring configuration file
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
-		// retrieve bean from the spring container. 
+		// retrieve bean from the spring container. The Spring Factory will create the bean and inject all dependency.
 		Coach theCoach = context.getBean("myCoach", Coach.class);
 		
 		// call method on the bean
 		System.out.println(theCoach.getDailyWorkout());
+		
+		//new method for fortunes
+		System.out.println(theCoach.getDailyFortune());
 		
 		// close the context
 		context.close();
