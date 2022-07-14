@@ -1,3 +1,8 @@
+Tested on v2.8.1 of Apache Kafka
+Download Link: https://archive.apache.org/dist/kafka/2.8.1/kafka_2.13-2.8.1.tgz
+Download Link: https://archive.apache.org/dist/kafka/2.8.1/kafka_2.12-2.8.1.tgz
+Download Link: https://archive.apache.org/dist/kafka/2.8.1/kafka-2.8.1-src.tgz
+
 Unzip the Kafka file downloaded from https://kafka.apache.org/downloads
 Place it in a folder, I'll place it at D:\Files\Amit\dev\servers\
 Rename the folder from, kafka_2.13-3.2.0 to kafka2.13
